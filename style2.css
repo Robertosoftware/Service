@@ -1,0 +1,17 @@
+.jumbotron h1 {
+    font-size: 63px;
+    text-align: center;
+}
+.cuerpo  {
+  font-size: 20px;
+  background: #F8F8FF;
+}
+body {
+background-attachment: fixed;
+background-image: url("fondo.jpeg");
+background-size: 30%;
+background-position: center center;
+}
+.fondo  {
+  background: white;
+}
