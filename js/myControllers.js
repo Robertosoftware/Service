@@ -18,5 +18,5 @@ app.run(function($rootScope){
 app.controller("mainCtrl", function($scope){
 	//$scope.msg='Main. It is much better than Nothing';
 });
-app.controller('gameCtrl', function($scope) {
+app.controller('cambioCtrl', function($scope) {
 });

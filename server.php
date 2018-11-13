@@ -13,6 +13,7 @@ $carrera = "";
 $errors = array(); 
 // connect to the database
 $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mydb');
+      mysqli_set_charset($db, 'utf8');
 //Ver la conexión de la database.
 //if ($db->connect_error) {
 //   die("Connection failed: " . $db->connect_error);
@@ -84,9 +85,17 @@ if (isset($_POST['login_asesor'])) {
   	$query = "SELECT * FROM asesor WHERE email='$email' AND password='$password'";
   	$results = mysqli_query($db, $query);
   	if (mysqli_num_rows($results) == 1) {
-  	  $_SESSION['email'] = $email;
+        while($row=mysqli_fetch_array($results)){
+            if($row['email']=="admin@gmail.com"){
+             $_SESSION['email'] = $email;
   	  $_SESSION['success'] = "Ahora estás en el sistema";
-  	  header('location: index.php');
+  	  header('location: index-admin.php')  ; 
+            }else{
+         $_SESSION['email'] = $email;
+  	  $_SESSION['success'] = "Ahora estás en el sistema";
+  	  header('location: index.php')  ; 
+        }
+        }
   	}else {
   		array_push($errors, "Email/password incorrectos");
   	}

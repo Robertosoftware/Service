@@ -43,12 +43,12 @@ include('server.php')
         <label>Celular</label>
       <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="text" class="form-control" name="celular" ria-describedby="sizing-addon1" value="">
+  <input type="number" class="form-control" name="celular" ria-describedby="sizing-addon1" value="">
   	</div>
       <label>Email</label>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="text" class="form-control" name="email" ria-describedby="sizing-addon1" value="">
+  <input type="email" class="form-control" name="email" ria-describedby="sizing-addon1" value="">
 </div>
          	  <label>Domicilio</label>
  <div class="input-group input-group-lg">

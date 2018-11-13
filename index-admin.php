@@ -17,8 +17,8 @@
     <link href="resources/navbar-fixed-top.css" rel="stylesheet">
    <!-- Custom styles for this template
     <link href="theme.css" rel="stylesheet">-->
-		<script src="js/myController.js"></script>
-		<script src="js/myModule.js"></script>
+		<script src="js-admin/myModule-admin.js"></script>
+		<script src="js-admin/myControllers-admin.js"></script>
 		
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -38,25 +38,38 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="#!">Inicio</a></li>
-            <li><a href="#!Registrar">Registrar clase</a></li>
-            <li><a href="#!Actualizar">Perfil del Asesor</a></li>
-			  <li class="dropdown"><!--<a href="#!">Consultar información</a>-->
+            <li><a href="#!Actualizar">Actualizar perfil</a></li>
+            <li class="dropdown"><!--<a href="#!">Consultar información</a>-->
+              <a class="dropdown-toggle" data-toggle="dropdown">Venta <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-header">Venta por fecha</li>
+        <li><a href="#!">Venta por Año</a></li>
+        <li><a href="#!">Venta por Mes</a></li>
+        <li class="dropdown-header">Otras categorías</li>
+        <li><a href="#!">Venta por Maestro</a></li>	
+                <li><a href="#!">Venta por Maestro y Mes</a></li>	
+            <li><a href="#!">Venta por Categoría y Mes</a></li>		
+            <li><a href="#!">Venta por Paquete</a></li>			 
+                              </ul></li>
+            <li class="dropdown"><!--<a href="#!">Consultar información</a>-->
              <a class="dropdown-toggle" data-toggle="dropdown">Actualizar datos <span class="caret"></span></a>
       <ul class="dropdown-menu">
-          <li class="dropdown-header">Alumnos</li>
+          <li class="dropdown-header">Maestros</li>
+        <li><a href="#!Asesor">Asesor</a></li>
+        <li class="dropdown-header">Tablas Complementarias</li>
         <li><a href="#!Alumno">Alumno</a></li>
         <li><a href="#!Responsable">Responsable</a></li>
-        <li class="dropdown-header">Tablas complementarias</li>
         <li><a href="#!Categoria">Categoría</a></li>
         <li><a href="#!Materia">Materia</a></li>
         <li><a href="#!Paquete">Paquete</a></li>
+        <li><a href="#!Parentesco">Parentesco</a></li>
         <li><a href="#!Zona">Zona</a></li>
       </ul></li>
-          </ul>
+            </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="index.php?logout='1'">Salir de la sesión<span class="sr-only">(current)</span></a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div><!--/.nav-collapse --->
       </div>
     </nav>
 		<div ng-view></div>
