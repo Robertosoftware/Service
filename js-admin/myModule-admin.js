@@ -10,6 +10,14 @@ app.config(function($routeProvider){
 				templateUrl:"partials-admin/CRUD/actualizar.php",
 				controller:"cambioCtrl"
 		})
+        .when("/Exito", {
+        templateUrl:"partials-admin/exito.php",
+				controller:"cambioCtrl"
+		})
+        .when("/Falla", {
+				templateUrl:"partials-admin/falla.php",
+				controller:"cambioCtrl"
+		})
         .when("/Categoria-editar", {
 				templateUrl:"partials-admin/CRUD/categoria/categoria-editar.php",
 				controller:"cambioCtrl"
@@ -36,6 +44,14 @@ app.config(function($routeProvider){
 		})
         .when("/Asesor", {
 				templateUrl:"partials-admin/CRUD/maestro/asesor.php",
+				controller:"cambioCtrl"
+		})
+       .when("/Password-editar", {
+				templateUrl:"partials-admin/CRUD/password/password-editar.php",
+				controller:"cambioCtrl"
+		})
+        .when("/Password", {
+				templateUrl:"partials-admin/CRUD/password/password.php",
 				controller:"cambioCtrl"
 		})
         .when("/Asesor-editar", {

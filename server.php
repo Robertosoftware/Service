@@ -32,6 +32,8 @@ if (isset($_POST['reg_asesor'])) {
   $carrera = mysqli_real_escape_string($db, $_POST['carrera']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
+  $clave = mysqli_real_escape_string($db, $_POST['clave']);
+ 
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
@@ -42,10 +44,14 @@ if (isset($_POST['reg_asesor'])) {
   if (empty($apellido_materno)) { array_push($errors, "Apellido Materno requerido para la operación"); }
   if (empty($direccion)) { array_push($errors, "Domicilio requerido para la operación"); }
   if (empty($horas)) { array_push($errors, "Horas requerido para la operación"); }
-  if (empty($carrera)) { array_push($errors, "Carrera requerido para la operación"); }
+  if (empty($carrera)) { array_push($errors, "Carrera requerida para la operación"); }
   if (empty($password_1)) { array_push($errors, "Password requerido para la operación"); }
+  if (empty($clave)) { array_push($errors, "Clave requerida para la operación"); }
   if ($password_1 != $password_2) {
 	array_push($errors, "No coincide el password");
+  }
+  if ($clave != "IW32") {
+	array_push($errors, "La clave de registro no es correcta");
   }
 
   // first check the database to make sure 
@@ -61,7 +67,7 @@ if (isset($_POST['reg_asesor'])) {
   // Finally, register user if there are no errors in the form
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
-  	$query = "INSERT INTO asesor (nombre, apellido_paterno, apellido_materno, celular, email, direccion, horas, carrera, password)
+  	$query = "INSERT INTO asesor (nombre, apellido_paterno, apellido_materno, celular, email, direccion, horas, idcarrera, password)
   			  VALUES('$nombre', '$apellido_paterno', '$apellido_materno', '$celular', '$email', '$direccion', '$horas', '$carrera', '$password')";
   	mysqli_query($db, $query);
   	$_SESSION['email'] = $email;

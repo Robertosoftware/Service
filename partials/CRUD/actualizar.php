@@ -35,7 +35,7 @@
   <input type="text" class="form-control" name="id" ria-describedby="sizing-addon1" value="<?php 
 echo $id;
 ?>"  readonly>
-</div>
+        </div>
                 <label>Nombre</label>
       <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
@@ -79,12 +79,29 @@ echo $horas;
 ?>">
 </div>
                <label>Carrera</label>
-      <div class="input-group input-group-lg">
- <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="text" class="form-control" name="carrera" aria-describedby="sizing-addon1" value="<?php
-echo $carrera;                                                                                                
-?>">
-</div>
+      <select name="carrera" class="form-control dropd">
+    <?php
+        $query="select a.idcarrera, c.nombre from carrera c, asesor a where a.idcarrera=c.idcarrera and a.idcarrera='$carrera'";
+        $result= mysqli_query($db, $query);
+        if($result)
+        {
+            while($row=mysqli_fetch_array($result)){
+                $number=$row['idcarrera'];
+                echo'<option value="'.$row['idcarrera'].'">'.$row['nombre'].'</option>';
+            }
+        }
+        ?>      
+        <?php
+        $query="select * from carrera where idcarrera != '$number'";
+        $result= mysqli_query($db, $query);
+        if($result)
+        {
+            while($row=mysqli_fetch_array($result)){
+                echo'<option value="'.$row['idcarrera'].'">'.$row['nombre'].'</option>';
+            }
+        }
+        ?>
+     </select>
                     <label>Email</label>
       <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
@@ -96,9 +113,7 @@ echo $email;
   	<div class="input-group">
   		<button type="submit" class="btn btn-info btn-lg btn2" name="actualizar">Cambiar datos</button>
   	</div>
-      	<br>
-         <a href="index.php#!/Actualizar">¿Deseas regresar?</a>
-  </form>     
+      </form>     
 </div>
     </div>
 <!--<a role="button" class="btn btn-success btn-lg btn-block" href="#!Registro">Registrar Alumno</a>-->

@@ -54,15 +54,14 @@
             <li class="dropdown"><!--<a href="#!">Consultar información</a>-->
              <a class="dropdown-toggle" data-toggle="dropdown">Actualizar datos <span class="caret"></span></a>
       <ul class="dropdown-menu">
-          <li class="dropdown-header">Maestros</li>
+          <li class="dropdown-header">Clases</li>
         <li><a href="#!Asesor">Asesor</a></li>
-        <li class="dropdown-header">Tablas Complementarias</li>
         <li><a href="#!Alumno">Alumno</a></li>
-        <li><a href="#!Responsable">Responsable</a></li>
+        <li><a href="#!Password">Cambiar password de asesores</a></li>
+        <li class="dropdown-header">Tablas Complementarias</li>
         <li><a href="#!Categoria">Categoría</a></li>
         <li><a href="#!Materia">Materia</a></li>
         <li><a href="#!Paquete">Paquete</a></li>
-        <li><a href="#!Parentesco">Parentesco</a></li>
         <li><a href="#!Zona">Zona</a></li>
       </ul></li>
             </ul>

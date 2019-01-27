@@ -6,7 +6,7 @@ mysqli_set_charset($db, 'utf8')
           ?>
 <div class="jumbotron">
                <div class="container">
-                       <h1><strong>CONSULTA </strong>TUS MAESTROS</h1>
+                       <h1><strong>CONSULTA </strong>TUS USUARIOS</h1>
     <div class="row">
              <div class="col-md-2"></div>
             <div class="col-md-8">
@@ -17,7 +17,6 @@ mysqli_set_charset($db, 'utf8')
                     <th>Email</th>
                     <th>Carrera</th>
                     <th>Editar</th>
-                    <th>Eliminar</th>
                     </tr>
                             <?php
         $query="select * from asesor order by idasesor";
@@ -34,8 +33,7 @@ mysqli_set_charset($db, 'utf8')
                 <td>'.$row['nombre'].' '.$row['apellido_paterno'].' '.$row['apellido_materno'].'</td>
                 <td>'.$row['email'].'</td>
                 <td>'.$row2['nombre'].'</td>
-                 <td><a href="partials-admin/CRUD/server-crud.php?easesor='.$row['idasesor'].'" class="btn btn-info">Editar</a></td>
-                    <td><a href="partials-admin/CRUD/server-crud.php?dasesor='.$row['idasesor'].'" class="btn btn-danger">Eliminar</a></td>
+                 <td><a href="partials-admin/CRUD/server-crud.php?epassword='.$row['idasesor'].'" class="btn btn-info">Cambiar</a></td>
                     </tr>
                 ';
             }

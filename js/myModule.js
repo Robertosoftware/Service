@@ -3,7 +3,23 @@ var app = angular.module("myApp",["ngRoute"]);
 app.config(function($routeProvider){
 	$routeProvider
 		.when("/Registrar", {
-				templateUrl:"partials/registrar.php",
+				templateUrl:"partials/CRUD/venta/venta.php",
+				controller:"cambioCtrl"
+		})
+    .when("/Registro-exitoso", {
+				templateUrl:"partials/exito-registro.php",
+				controller:"cambioCtrl"
+		})
+        .when("/Consultar", {
+				templateUrl:"partials/CRUD/clases/clases.php",
+				controller:"cambioCtrl"
+		})
+    .when("/Clases-ver", {
+				templateUrl:"partials/CRUD/clases/ver-clases.php",
+				controller:"cambioCtrl"
+		})
+    .when("/Clases", {
+				templateUrl:"partials/CRUD/clases/clases-editar.php",
 				controller:"cambioCtrl"
 		})
 		.when("/Actualizar", {
@@ -48,6 +64,18 @@ app.config(function($routeProvider){
 		})
         .when("/Parentesco", {
 				templateUrl:"partials/CRUD/parentesco/parentesco.php",
+				controller:"cambioCtrl"
+		})
+        .when("/Exito", {
+        templateUrl:"partials/exito.php",
+				controller:"cambioCtrl"
+		})
+        .when("/Falla", {
+				templateUrl:"partials/falla.php",
+				controller:"cambioCtrl"
+		})
+        .when("/Password", {
+				templateUrl:"partials/password.php",
 				controller:"cambioCtrl"
 		})
         .when("/Responsable-editar", {

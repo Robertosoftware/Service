@@ -41,16 +41,11 @@
             <li><a href="#!Registrar">Registrar clase</a></li>
             <li><a href="#!Actualizar">Perfil del Asesor</a></li>
 			  <li class="dropdown"><!--<a href="#!">Consultar información</a>-->
-             <a class="dropdown-toggle" data-toggle="dropdown">Actualizar datos <span class="caret"></span></a>
+             <a class="dropdown-toggle" data-toggle="dropdown">Consultar datos <span class="caret"></span></a>
       <ul class="dropdown-menu">
-          <li class="dropdown-header">Alumnos</li>
-        <li><a href="#!Alumno">Alumno</a></li>
-        <li><a href="#!Responsable">Responsable</a></li>
-        <li class="dropdown-header">Tablas complementarias</li>
-        <li><a href="#!Categoria">Categoría</a></li>
-        <li><a href="#!Materia">Materia</a></li>
-        <li><a href="#!Paquete">Paquete</a></li>
-        <li><a href="#!Zona">Zona</a></li>
+        <li><a href="#!Consultar">Consultar clases</a></li>
+        <li><a href="#!Alumno">Alumnos</a></li>
+           <li><a href="#!Password">Cambia tú password</a></li>
       </ul></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">

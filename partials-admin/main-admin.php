@@ -5,7 +5,7 @@
 <div class="fondo">
      <div class="jumbotron">
         <h1><?php  if (isset($_SESSION['email'])) : ?>
-    	<p>Bienvenido Maestro <strong><?php echo $_SESSION['email']; ?></strong></p> </h1>
+    	<p>Bienvenido Administrador <strong><?php echo $_SESSION['email']; ?></strong></p> </h1>
       </div>
     <div class="cuerpo">
       <div class="alert alert-success" role="alert">

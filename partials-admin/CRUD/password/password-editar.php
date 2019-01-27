@@ -1,18 +1,13 @@
-<?php include('../../session.php') ?>
-  	<?php if (isset($_SESSION['success'])) : ?>
-  	<?php endif ?>
-<?php  if (isset($_SESSION['email'])) : ?>
+<?php session_start();?>
 
-    <!-- logged in user information -->
-<div class="fondo">
-     <div class="jumbotron labelac">
-    <form method="post" action="partials-admin/CRUD/server-crud.php">
-  	<?php include('../../errors.php'); ?>
+<div class="jumbotron labelac">
+<form method="post" action="partials-admin/CRUD/server-crud.php">
+  	<?php include('../errores/errors-admin.php'); ?>
 <?php
         $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mydb');
         mysqli_set_charset($db, 'utf8');
-        $email = $_SESSION['email'];
-        $query="select * from asesor where email='$email'";
+        $numero = $_SESSION['id'];
+        $query="select * from asesor where idasesor='$numero'";
         $result= mysqli_query($db, $query);
         $nombre="";
         $descripcion="";
@@ -25,12 +20,11 @@
                 $apellidom = $row['apellido_materno'];
                 $direccion = $row['direccion'];
                 $celular = $row['celular'];
-                $carrera = $row['idcarrera'];
-                $horas = $row['horas'];
+                $email = $row['email'];
             }
         }
           ?>
-           <label>Id</label>
+            <label>Id</label>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="text" class="form-control" name="id" ria-describedby="sizing-addon1" value="<?php 
@@ -42,67 +36,29 @@ echo $id;
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="text" class="form-control" name="nombre" aria-describedby="sizing-addon1" value="<?php
 echo $nombre;                                                                                                
-?>">
+?>" readonly>
 </div>
                <label>Apellido Paterno</label>
       <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="text" class="form-control" name="apellido_paterno" aria-describedby="sizing-addon1" value="<?php
 echo $apellidop;                                                                                                
-?>">
+?>" readonly>
 </div>
                <label>Apellido Materno</label>
       <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="text" class="form-control" name="apellido_materno" aria-describedby="sizing-addon1" value="<?php
 echo $apellidom;                                                                                                
-?>">
+?>" readonly>
 </div>
-               <label>Dirección</label>
-      <div class="input-group input-group-lg">
- <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="text" class="form-control" name="direccion" aria-describedby="sizing-addon1" value="<?php
-echo $direccion;                                                                                                
-?>">
-</div>
-               <label>Celular</label>
+        <label>Celular</label>
       <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="text" class="form-control" name="celular" aria-describedby="sizing-addon1" value="<?php
 echo $celular;                                                                                                
-?>">
-</div>
-               <label>Horas impartidas</label>
-      <div class="input-group input-group-lg">
- <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="text" class="form-control" name="horas" aria-describedby="sizing-addon1" value="<?php
-echo $horas;                                                                                                
-?>">
-</div>
-               <label>Carrera</label>
-      <select name="carrera" class="form-control dropd">
-    <?php
-        $query="select a.idcarrera, c.nombre from carrera c, asesor a where a.idcarrera=c.idcarrera and a.idcarrera='$carrera'";
-        $result= mysqli_query($db, $query);
-        if($result)
-        {
-            while($row=mysqli_fetch_array($result)){
-                $number=$row['idcarrera'];
-                echo'<option value="'.$row['idcarrera'].'">'.$row['nombre'].'</option>';
-            }
-        }
-        ?>      
-        <?php
-        $query="select * from carrera where idcarrera != '$number'";
-        $result= mysqli_query($db, $query);
-        if($result)
-        {
-            while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idcarrera'].'">'.$row['nombre'].'</option>';
-            }
-        }
-        ?>
-     </select>
+?>" readonly>
+    </div>
                     <label>Email</label>
       <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
@@ -110,12 +66,21 @@ echo $horas;
 echo $email;                                                                                                    
 ?>" readonly>
 </div>
-        <br>
-  	<div class="input-group">
-  		<button type="submit" class="btn btn-info btn-lg btn2" name="actualizar">Cambiar datos</button>
-  	</div>
-  </form>     
+     <label>Password</label>
+ <div class="input-group input-group-lg">
+ <span class="input-group-addon" id="sizing-addon1"></span>
+  <input type="text" class="form-control" name="password_1" ria-describedby="sizing-addon1" value="">
 </div>
-    </div>
-<!--<a role="button" class="btn btn-success btn-lg btn-block" href="#!Registro">Registrar Alumno</a>-->
-    <?php endif ?>
+        	  <label>Confirmar password</label>
+  	 <div class="input-group input-group-lg">
+ <span class="input-group-addon" id="sizing-addon1"></span>
+  <input type="text" class="form-control" name="password_2" ria-describedby="sizing-addon1" value="">
+</div>
+  	<div class="input-group">
+  		<button type="submit" class="btn btn-info btn-lg btn2" name="password_editar">Cambiar datos</button>
+  	</div>
+      	<p>
+         <a href="index-admin.php#!/Password">¿Deseas regresar?</a>
+  	</p>
+  </form>
+</div>

@@ -37,8 +37,8 @@ mysqli_set_charset($db, 'utf8')
                     <tr>
                     <th>#</th>
                     <th>Nombre</th>
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                     </tr>
                             <?php
         $query="select * from zona order by idzona";

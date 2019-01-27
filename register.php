@@ -16,6 +16,10 @@ include('server.php')
    <!-- Bootstrap theme -->
     <link href="resources/bootstrap-theme.min.css" rel="stylesheet">
     <head>
+<?php
+           $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mydb');
+      mysqli_set_charset($db, 'utf8');
+          ?>
     <title>Registro del sistema</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -61,10 +65,21 @@ include('server.php')
   <input type="text" class="form-control" name="horas" ria-describedby="sizing-addon1" value="">
 </div>
         	  <label>Carrera</label>
- <div class="input-group input-group-lg">
- <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="text" class="form-control" name="carrera" ria-describedby="sizing-addon1" value="">
-</div>
+<select required name="carrera" class="form-control dropd">
+                     <option value="">
+                             </option>
+                         <?php
+                         $query="select * from carrera";
+                         $result= mysqli_query($db, $query);
+                         if($result)
+                         {
+                             while($row=mysqli_fetch_array($result)){
+                                 echo'<option value="'.$row['idcarrera'].'">'.$row['nombre'].'</option>';
+                             }
+                         }
+                         ?>
+                      </select>
+     <br>
         	  <label>Password</label>
  <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
@@ -74,6 +89,11 @@ include('server.php')
   	 <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="password" class="form-control" name="password_2" ria-describedby="sizing-addon1" value="">
+</div>
+      <label>Clave de registro</label>
+  	 <div class="input-group input-group-lg">
+ <span class="input-group-addon" id="sizing-addon1"></span>
+  <input type="password" class="form-control" name="clave" ria-describedby="sizing-addon1" value="">
 </div>
   	<div class="input-group">
     <button type="submit" class="btn" name="reg_asesor">Registrar</button>

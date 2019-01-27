@@ -42,8 +42,8 @@ mysqli_set_charset($db, 'utf8')
                     <th>#</th>
                     <th>Nombre</th>
                     <th>Descripción</th>
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                     </tr>
                             <?php
         $query="select * from materia order by idmateria";
