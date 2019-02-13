@@ -38,7 +38,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="#!">Inicio</a></li>
-            <li><a href="#!Registrar">Registrar clase</a></li>
+            <li><a href="clase.php">Registrar clase</a></li>
             <li><a href="#!Actualizar">Perfil del Asesor</a></li>
 			  <li class="dropdown"><!--<a href="#!">Consultar información</a>-->
              <a class="dropdown-toggle" data-toggle="dropdown">Consultar datos <span class="caret"></span></a>

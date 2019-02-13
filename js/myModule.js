@@ -10,6 +10,10 @@ app.config(function($routeProvider){
 				templateUrl:"partials/exito-registro.php",
 				controller:"cambioCtrl"
 		})
+    .when("/Registro-fallido", {
+				templateUrl:"partials/fallo-registro.php",
+				controller:"cambioCtrl"
+		})
         .when("/Consultar", {
 				templateUrl:"partials/CRUD/clases/clases.php",
 				controller:"cambioCtrl"

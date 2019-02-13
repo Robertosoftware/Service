@@ -234,6 +234,27 @@ if (isset($_POST['asesor_editar'])) {
                 echo "ERROR";
     }
 }
+if (isset($_POST['alumno'])) {
+    $email = $_SESSION['email'];
+    $query="select idasesor from asesor where email='$email'";
+    $result= mysqli_query($db, $query);
+    $row=mysqli_fetch_array($result);
+    $idasesor= $row['idasesor'];
+    $nombre= mysqli_real_escape_string($db, $_POST['nombre_alumno']);
+    $edad = mysqli_real_escape_string($db, $_POST['edad']);
+    $nombre_responsable = mysqli_real_escape_string($db, $_POST['nombre_responsable']);
+    $celular = mysqli_real_escape_string($db, $_POST['celular_responsable']);
+    $correo = mysqli_real_escape_string($db, $_POST['correo_responsable']);
+    $parentesco = mysqli_real_escape_string($db, $_POST['parentesco_responsable']);
+    $direccion = mysqli_real_escape_string($db, $_POST['direccion']); 
+    $query = "Insert into alumno (nombre_alumno,edad,nombre_responsable,celular_responsable,correo_responsable,parentesco_responsable,direccion,idasesor) values('$nombre','$edad','$nombre_responsable','$celular','$correo','$parentesco','$direccion','$idasesor')";
+  	$results = mysqli_query($db, $query);
+        if($results){
+      	  header('location: ../../index-admin.php#!/Alumno');}
+    else{
+                echo "ERROR";
+    }
+}
 if (isset($_GET['dalumno'])) {
      $delete = mysqli_real_escape_string($db, $_GET['dalumno']);
     $query = "Delete from alumno where idalumno='$delete'";
@@ -260,7 +281,7 @@ if (isset($_POST['alumno_editar'])) {
     $parentesco = mysqli_real_escape_string($db, $_POST['parentesco_responsable']);
     $direccion = mysqli_real_escape_string($db, $_POST['direccion']); 
     $asesor = mysqli_real_escape_string($db, $_POST['idasesor']);
-    $query = "Update alumno set nombre_alumno='$nombre', edad='$edad', nombre_responsable='$nombre_responsable', celular_responsable='$celular', correo_responsable='$correo', parentesco_responsable='$parentesco', idasesor='$asesor' where idalumno = '$idalumno'";
+    $query = "Update alumno set nombre_alumno='$nombre', edad='$edad', nombre_responsable='$nombre_responsable', celular_responsable='$celular', correo_responsable='$correo', parentesco_responsable='$parentesco', direccion='$direccion', idasesor='$asesor' where idalumno = '$idalumno'";
   	$results = mysqli_query($db, $query);
         if($results){
       	  header('location: ../../index-admin.php#!/Alumno');}

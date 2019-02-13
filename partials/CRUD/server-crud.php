@@ -22,17 +22,6 @@ if (isset($_POST['actualizar'])) {
                 echo "ERROR";
     }
 }
-if (isset($_GET['dalumno'])) {
-     $delete = mysqli_real_escape_string($db, $_GET['dalumno']);
-    $query = "Delete from alumno where idalumno='$delete'";
-      	$results = mysqli_query($db, $query);
-    if($results){
-    header('location: ../../index.php#!/Alumno');
-    echo "<br/><br/><span>Borrado exitosamente...!!</span>";    
-    }else{
-        echo "ERROR";
-    }   
-}
 if (isset($_GET['ealumno'])) {
          $edit = mysqli_real_escape_string($db, $_GET['ealumno']);
   	  $_SESSION['id'] = $edit;
@@ -52,6 +41,18 @@ if (isset($_GET['eclases'])) {
 }
 if (isset($_GET['dventa'])) {
         $delete = mysqli_real_escape_string($db, $_GET['dventa']);
+    $query = "Select * from venta where idventa='$delete'";
+        $result= mysqli_query($db, $query);
+    $row= mysqli_fetch_array($result);
+    $idasesor= $row['idasesor'];
+    $horas= $row['horas'];
+    $query = "Select * from asesor where idasesor='$idasesor'";
+        $result= mysqli_query($db, $query);
+    $row= mysqli_fetch_array($result);
+    $hasesor= $row['horas'];
+    $hasesor= $hasesor - $horas;
+    $query = "Update asesor set horas='$hasesor' where idasesor = '$idasesor'";
+  	$result = mysqli_query($db, $query);
     $query = "Delete from venta where idventa='$delete'";
       	$results = mysqli_query($db, $query);
     if($results){
@@ -128,23 +129,30 @@ if (isset($_POST['venta'])) {
     $paquete = mysqli_real_escape_string($db, $_POST['paquete1']);
     $fecha = mysqli_real_escape_string($db, $_POST['fecha']);
     $zona = mysqli_real_escape_string($db, $_POST['zona1']);
-    $alumno = mysqli_real_escape_string($db, $_POST['alumno1']);
+    $alumno3 = mysqli_real_escape_string($db, $_POST['alumno2']);
+    $query="select idalumno from alumno where nombre_alumno='$alumno3'";
+    $result= mysqli_query($db, $query);
+    $row=mysqli_fetch_array($result);
+    $alumno= $row['idalumno'];
     $categoria = mysqli_real_escape_string($db, $_POST['categoria1']);
     $materia = mysqli_real_escape_string($db, $_POST['materia1']);
     $descripcion = mysqli_real_escape_string($db, $_POST['descripcion']);
-    if ($hasesor<100){
+    if ($hasesor>100){
     $cantidad= (350*$horas);
+    $hasesor=$hasesor+$horas;
+    $query = "Update asesor set horas='$hasesor' where idasesor = '$idasesor'";
+  	$results = mysqli_query($db, $query);
     }else{
     $cantidad= (250*$horas);
+    $hasesor= $hasesor+$horas;
+    $query = "Update asesor set horas='$hasesor' where idasesor = '$idasesor'";
+    $results = mysqli_query($db, $query);
     }
     $query = "Insert into venta (horas,fecha,descripcion,idpaquete,idasesor,idzona,idalumno,idcategoria,idmateria,cantidad) values('$horas','$fecha','$descripcion','$paquete','$idasesor','$zona','$alumno','$categoria','$materia','$cantidad')";
   	$results = mysqli_query($db, $query);
         if($results){
       	  header('location: ../../index.php#!/Registro-exitoso');}
     else{
-                echo "ERROR
-                $horas,$fecha,$descripcion,$paquete,$idasesor,$zona,$alumno,$categoria,$materia,$cantidad";
+              	  header('location: ../../index.php#!/Registro-fallido');}        
     }
-}
-?>
 ?>

@@ -82,7 +82,7 @@ echo $direccion;
 ?>">
 </div>
     <label>Asesor</label>    
-    <select name="idasesor" class="form-control dropd">
+    <select readonly name="idasesor" class="form-control dropd">
     <?php
         $query="select a.idasesor, a.nombre, a.apellido_paterno, a.apellido_materno from alumno al, asesor a where a.idasesor=al.idasesor and a.idasesor='$asesor'";
         $result= mysqli_query($db, $query);
@@ -94,18 +94,7 @@ echo $direccion;
                     ' '.$row['apellido_paterno'].' '.$row['apellido_materno'].'</option>';
             }
         }
-        ?>      
-        <?php
-        $query="select * from asesor where idasesor != '$asesor'";
-        $result= mysqli_query($db, $query);
-        if($result)
-        {
-            while($row=mysqli_fetch_array($result)){
-                echo'<option value="'.$row['idasesor'].'">'.$row['nombre'].
-                    ' '.$row['apellido_paterno'].' '.$row['apellido_materno'].'</option>';
-            }
-        }
-        ?>
+        ?>     
      </select>
     
   	<div class="input-group">

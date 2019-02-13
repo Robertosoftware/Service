@@ -9,7 +9,10 @@
       </div>
     <div class="cuerpo">
       <div class="alert alert-success" role="alert">
-        <strong>Ahora estás en el sistema de Bright Brains</strong>
+        <strong>Ahora estás en el sistema de Bright Brains.</strong>
+      </div>
+        <div class="alert alert-danger" role="alert">
+        <strong>Recuerda que si tú eliminas alguna clase, el sistema te restará las horas impartidas de esa clase.</strong>
       </div>
 </div>
     </div>

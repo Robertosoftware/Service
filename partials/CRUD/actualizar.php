@@ -71,12 +71,13 @@ echo $direccion;
 echo $celular;                                                                                                
 ?>">
 </div>
-               <label>Horas impartidas</label>
+               <label>Horas impartidas </label>
+        <labelmin> (Si necesitas cambiar las horas, consulta al administrador)</labelmin>
       <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="text" class="form-control" name="horas" aria-describedby="sizing-addon1" value="<?php
 echo $horas;                                                                                                
-?>">
+?>" readonly>
 </div>
                <label>Carrera</label>
       <select name="carrera" class="form-control dropd">

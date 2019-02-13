@@ -22,6 +22,10 @@ background-position: center center;
     margin-top: 10px;
   font-size: 18px;  
 }
+labelmin {
+  text-align: left;
+  font-size:13px;  
+}
 .btn2{
     margin-top: 10px; 
 }

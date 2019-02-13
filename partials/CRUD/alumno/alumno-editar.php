@@ -36,56 +36,53 @@ echo $idalumno;
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="text" class="form-control" name="nombre_alumno" aria-describedby="sizing-addon1" value="<?php
 echo $nombre;                                                                                                
-?>">
+?>" readonly>
 </div>
                <label>Edad del Alumno</label>
       <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="number" class="form-control" name="edad" aria-describedby="sizing-addon1" value="<?php
 echo $edad;                                                                                                
-?>">
+?>" readonly>
     </div>
                <label>Nombre Responsable</label>
       <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="text" class="form-control" name="nombre_responsable" aria-describedby="sizing-addon1" value="<?php
 echo $nombre_responsable;                                                                                                
-?>">
+?>" readonly>
 </div>
                <label>Celular Responsable</label>
       <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="number" class="form-control" name="celular_responsable" aria-describedby="sizing-addon1" value="<?php
 echo $celular;                                                                                                
-?>">
+?>" readonly>
 </div>
                <label>Correo Responsable</label>
       <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="email" class="form-control" name="correo_responsable" aria-describedby="sizing-addon1" value="<?php
 echo $correo;                                                                                                
-?>">
+?>" readonly>
 </div>
                <label>Parentesco Responsable</label>
        <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="text" class="form-control" name="parentesco_responsable" aria-describedby="sizing-addon1" value="<?php
 echo $parentesco;                                                                                                
-?>">
+?>" readonly>
 </div>
                     <label>Dirección</label>
       <div class="input-group input-group-lg">
  <span class="input-group-addon" id="sizing-addon1"></span>
   <input type="text" class="form-control" name="direccion" aria-describedby="sizing-addon1" value="<?php
 echo $direccion;                                                                                                    
-?>">
+?>" readonly>
 </div>
-    
-  	<div class="input-group">
-  		<button type="submit" class="btn btn-info btn-lg btn2" name="alumno_editar">Cambiar datos</button>
-  	</div>
+    <br>
       	<p>
-         <a href="index.php#!/Alumno">¿Deseas regresar?</a>
+         <a href="index.php#!/Alumno" class="btn btn-lg btn-info">Regresar</a>
   	</p>
   </form>
 </div>

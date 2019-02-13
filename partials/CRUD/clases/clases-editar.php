@@ -16,6 +16,7 @@ mysqli_set_charset($db, 'utf8')
                     <th># Clase</th>
                     <th>Fecha</th>
                     <th>Alumno</th>
+                    <th>Horas de clase</th>
                     <th>Ver</th>
                     <th>Eliminar</th>
                     </tr>
@@ -44,6 +45,7 @@ mysqli_set_charset($db, 'utf8')
                 <td>'.$row['idventa'].'</td>
                 <td>'.$row['fecha'].'</td>
                 <td>'.$nombre_alumno.'</td>
+                <td>'.$row['horas'].'</td>
                  <td><a href="partials/CRUD/server-crud.php?eclases='.$row['idventa'].'" class="btn btn-info">Ver</a></td>
                     <td><a href="partials/CRUD/server-crud.php?dventa='.$row['idventa'].'" class="btn btn-danger">Eliminar</a></td>
                     </tr>
