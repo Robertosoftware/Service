@@ -4,7 +4,7 @@
 <form method="post" action="partials-admin/CRUD/server-crud.php">
   	<?php include('../errores/errors-admin.php'); ?>
 <?php
-        $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mydb');
+        $db = mysqli_connect('localhost', 'id8502144_root', '254088Ma!', 'id8502144_mydb');
         mysqli_set_charset($db, 'utf8');
         $numero = $_SESSION['id'];
         $query="select * from paquete where idpaquete='$numero'";

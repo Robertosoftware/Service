@@ -17,7 +17,7 @@ include('server.php')
     <link href="resources/bootstrap-theme.min.css" rel="stylesheet">
     <head>
 <?php
-           $db = mysqli_connect('localhost', 'root', '254088Ma!', 'mydb');
+           $db = mysqli_connect('localhost', 'id8502144_root', '254088Ma!', 'id8502144_mydb');
       mysqli_set_charset($db, 'utf8');
           ?>
     <title>Registro del sistema</title>

@@ -1,6 +1,6 @@
 <?php include('session.php') ?> 
 <?php
-$db = mysqli_connect('localhost', 'root', '254088Ma!', 'mydb');
+$db = mysqli_connect('localhost', 'id8502144_root', '254088Ma!', 'id8502144_mydb');
 mysqli_set_charset($db, 'utf8')
           ?>
 <div class="jumbotron">

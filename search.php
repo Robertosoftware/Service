@@ -1,8 +1,8 @@
 <?php
 define('DB_SERVER', 'localhost');
-define('DB_USER', 'root');
+define('DB_USER', 'id8502144_root');
 define('DB_PASSWORD', '254088Ma!');
-define('DB_NAME', 'mydb');
+define('DB_NAME', 'id8502144_mydb');
 mysqli_set_charset($db, 'utf8');
 
 if (isset($_GET['term'])){
